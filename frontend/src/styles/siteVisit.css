@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#eef5ff,#dcecff,#f8fbff);
+
+min-height:100vh;
+
+}
+
+/* ===========================
+        PAGE
+=========================== */
+
+.crm-page{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:40px 20px;
+
+min-height:100vh;
+
+}
+
+/* ===========================
+        CARD
+=========================== */
+
+.crm-card,
+.history-card{
+
+width:100%;
+
+max-width:950px;
+
+background:#fff;
+
+border-radius:20px;
+
+padding:35px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+animation:fade .6s ease;
+
+}
+
+/* ===========================
+      HEADER
+=========================== */
+
+.crm-header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.crm-header h1{
+
+color:#0F4C81;
+
+font-size:34px;
+
+margin-bottom:8px;
+
+}
+
+.crm-header p{
+
+color:#777;
+
+font-size:16px;
+
+}
+
+/* ===========================
+     SECTION CARD
+=========================== */
+
+.card-section{
+
+background:#f8fbff;
+
+border-radius:15px;
+
+padding:25px;
+
+margin-bottom:25px;
+
+border-left:6px solid #2563eb;
+
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+.card-section h2{
+
+margin-bottom:18px;
+
+color:#1d4ed8;
+
+}
+
+/* ===========================
+     INFO CARD
+=========================== */
+
+.info-card{
+
+background:white;
+
+padding:18px;
+
+border-radius:12px;
+
+margin-top:18px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.info-card p{
+
+margin:8px 0;
+
+}
+
+/* ===========================
+      BUTTONS
+=========================== */
+
+.button-group{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:#2563eb;
+
+color:white;
+
+padding:14px 35px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+background:#16a34a;
+
+color:white;
+
+padding:14px 35px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+background:#15803d;
+
+transform:translateY(-3px);
+
+}
+
+/* ===========================
+        INPUT
+=========================== */
+
+input[type=file]{
+
+width:100%;
+
+padding:12px;
+
+border:2px dashed #2563eb;
+
+border-radius:10px;
+
+background:#fff;
+
+cursor:pointer;
+
+}
+
+.search-box{
+
+margin-bottom:30px;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.search-box input{
+
+width:450px;
+
+max-width:100%;
+
+padding:14px;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+font-size:15px;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.search-box input:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 10px rgba(37,99,235,.25);
+
+}
+
+/* ===========================
+      TABLE
+=========================== */
+
+.table-wrapper{
+
+overflow-x:auto;
+
+display:flex;
+
+justify-content:center;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+thead{
+
+background:#2563eb;
+
+}
+
+thead th{
+
+padding:18px;
+
+color:white;
+
+text-align:center;
+
+font-size:15px;
+
+}
+
+tbody td{
+
+padding:16px;
+
+text-align:center;
+
+border-bottom:1px solid #eee;
+
+}
+
+tbody tr:nth-child(even){
+
+background:#f8fbff;
+
+}
+
+tbody tr:hover{
+
+background:#e7f0ff;
+
+}
+
+/* ===========================
+      STATUS
+=========================== */
+
+.badge{
+
+padding:8px 16px;
+
+border-radius:20px;
+
+font-size:14px;
+
+font-weight:600;
+
+display:inline-block;
+
+}
+
+.success{
+
+background:#dcfce7;
+
+color:#15803d;
+
+}
+
+.pending{
+
+background:#fef3c7;
+
+color:#b45309;
+
+}
+
+.failed{
+
+background:#fee2e2;
+
+color:#dc2626;
+
+}
+
+/* ===========================
+      ANIMATION
+=========================== */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.crm-card,
+.history-card{
+
+padding:20px;
+
+}
+
+.crm-header h1{
+
+font-size:26px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:100%;
+
+}
+
+table{
+
+font-size:13px;
+
+}
+
+thead th,
+tbody td{
+
+padding:12px;
+
+}
+
+}
