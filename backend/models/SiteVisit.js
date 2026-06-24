@@ -1,54 +1,64 @@
 const mongoose = require("mongoose");
 
-const siteVisitSchema = new mongoose.Schema({
-
-    leadId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Lead",
-        required:true
+const siteVisitSchema = new mongoose.Schema(
+  {
+    employeeName: {
+      type: String,
+      required: true,
+      trim: true,
     },
 
-    employeeId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"User",
-        required:true
+    customerName: {
+      type: String,
+      default: "",
+      trim: true,
     },
 
-    latitude:{
-        type:Number,
-        required:true
+    propertyName: {
+      type: String,
+      default: "",
+      trim: true,
     },
 
-    longitude:{
-        type:Number,
-        required:true
+    latitude: {
+      type: Number,
+      required: true,
     },
 
-    selfieImage:{
-        type:String,
-        required:true
+    longitude: {
+      type: Number,
+      required: true,
     },
 
-    visitTime:{
-        type:Date,
-        default:Date.now
+    selfieImage: {
+      type: String,
+      default: "default.jpg",
     },
 
-    distance:{
-        type:Number,
-        default:0
+    remarks: {
+      type: String,
+      default: "",
     },
 
-    status:{
-        type:String,
-        default:"Site Visit Completed"
-    }
+    visitTime: {
+      type: Date,
+      default: Date.now,
+    },
 
-},{
-    timestamps:true
-});
+    distance: {
+      type: Number,
+      default: 0,
+    },
 
-module.exports = mongoose.model(
-    "SiteVisit",
-    siteVisitSchema
+    status: {
+      type: String,
+      enum: ["Pending", "Approved", "Rejected"],
+      default: "Pending",
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
+
+module.exports = mongoose.model("SiteVisit", siteVisitSchema);
